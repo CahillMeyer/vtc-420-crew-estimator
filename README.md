@@ -23,27 +23,22 @@ def estimate_crew(volume_cuft, bulky_count, stair_flights, long_distance):
     Returns:
         int: The final calculated crew size.
     """
-    # Start with a base of 2 crew members
-    crew = 2
 
-    # Add crew for large volume
+    crew = 2  
+
     if volume_cuft > 480:
-        crew += 1
+        crew += 1 
 
-    # Add 1 crew for every 2 bulky items
-    crew += bulky_count // 2
+    crew += bulky_count // 2  
 
-    # Add crew for significant stairs
     if stair_flights >= 3:
-        crew += 1
+        crew += 1  
 
-    # Add crew for long-distance travel
     if long_distance:
-        crew += 1
-    
-    return crew
+        crew += 1  
+      
+    return crew 
 
-# Run with the client's specified input and print the result
 output = estimate_crew(550, 3, 2, False)
 print(output)
 ```
